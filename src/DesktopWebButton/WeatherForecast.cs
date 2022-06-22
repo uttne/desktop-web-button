@@ -1,4 +1,4 @@
-namespace AppTemplate;
+namespace DesktopWebButton;
 
 public class WeatherForecast
 {

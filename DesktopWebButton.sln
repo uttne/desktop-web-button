@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2E5A03F6-F167-4510-92F1-1E91DA1852D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate", "src\AppTemplate\AppTemplate.csproj", "{6A4E7560-64D5-4B01-AE4E-3BFC762A35BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopWebButton", "src\DesktopWebButton\DesktopWebButton.csproj", "{6A4E7560-64D5-4B01-AE4E-3BFC762A35BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
