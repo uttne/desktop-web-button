@@ -5,6 +5,7 @@ import {
   Grid,
   Paper,
   Stack,
+  Typography,
 } from "@mui/material";
 import { ReactNode, useEffect, useState } from "react";
 import "./Page.css";
@@ -16,29 +17,37 @@ const rootPageStyle = css({
 });
 
 class ItemProps {
-  name: string = "";
+  button?: ButtonData;
 }
 
 function Item(props: ItemProps) {
   const action = async () => {
-    await fetch(`/api/Button?name=${props.name}`, { method: "POST" });
+    await fetch(`/api/Button?name=${props.button?.name}`, { method: "POST" });
   };
   return (
     <Card>
       <CardActionArea onClick={action}>
-        <CardContent>{props.name}</CardContent>
+        <CardContent>
+          <Typography gutterBottom variant="h6">
+            {props.button?.display ?? props.button?.name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {props.button?.description}
+          </Typography>
+        </CardContent>
       </CardActionArea>
     </Card>
   );
 }
 
 class ButtonData {
+  kind: string = "";
   name: string = "";
+  display?: string;
+  description?: string;
 }
 
 export default function MainPage() {
-  const arr = new Array(10).fill(undefined).map(() => "aa");
-
   const [buttons, setButtons] = useState<ButtonData[]>([]);
 
   useEffect(() => {
@@ -58,8 +67,8 @@ export default function MainPage() {
         <Grid container spacing={1}>
           {buttons.map((x, index) => {
             return (
-              <Grid key={index} item xs={3} sm={2}>
-                <Item name={x.name}></Item>
+              <Grid key={index} item xs={6} sm={4} md={3}>
+                <Item button={x}></Item>
               </Grid>
             );
           })}
