@@ -1,8 +1,17 @@
+using DesktopWebButton.Controllers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddScoped(_ => new ButtonDataSetClient("buttons.json"));
+builder.Services.AddScoped(s => s.GetRequiredService<ButtonDataSetClient>().Load());
+
 builder.Services.AddControllersWithViews();
+builder.Host.UseWindowsService(options =>
+{
+    options.ServiceName = "DesktopWebButton";
+});
 
 var app = builder.Build();
 

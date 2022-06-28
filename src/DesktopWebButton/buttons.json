@@ -1,0 +1,25 @@
+﻿[
+  {
+    "kind": "program",
+    "name": "notepad",
+    "display": "メモ帳の起動",
+    "description": "メモ帳を起動する",
+    "program": "notepad"
+  },
+  {
+    "kind": "program",
+    "name": "normal",
+    "display": "通常のディスプレイ",
+    "description": "通常用のディスプレイ配置にする",
+    "program": "C:/Program Files (x86)/Dell/Dell Display Manager/ddm.exe",
+    "args": "/SetPxPMode Off"
+  },
+  {
+    "kind": "program",
+    "name": "work",
+    "display": "仕事用のディスプレイ",
+    "description": "仕事用のディスプレイ配置にする",
+    "program": "C:/Program Files (x86)/Dell/Dell Display Manager/ddm.exe",
+    "args": "/SetPxPMode PBP HDMI2 HDMI1"
+  }
+]
