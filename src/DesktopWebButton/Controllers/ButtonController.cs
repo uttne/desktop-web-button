@@ -52,7 +52,7 @@ public class ButtonDataSetClient
         var file = DataSetFile;
         if (!File.Exists(file)) return new ButtonDataList();
         
-        using var fs = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.None);
+        using var fs = new FileStream(file, FileMode.Open, FileAccess.Read);
         var option = new JsonSerializerOptions()
         {
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
@@ -68,7 +68,7 @@ public class ButtonDataSetClient
     {
         var file = DataSetFile;
         
-        using var fs = new FileStream(file, FileMode.Create, FileAccess.Write, FileShare.None);
+        using var fs = new FileStream(file, FileMode.Create, FileAccess.Write);
         var option = new JsonSerializerOptions()
         {
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
